@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# License and documentation
+LICENSE
+README.md
+
+# Data files
+*.nc
+
+# Delft3D trim example inputs
+trim-*.dat
+trim-*.def
+
+# Analysis notebooks (output/scratch)
+sandplover_analysis.ipynb
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
