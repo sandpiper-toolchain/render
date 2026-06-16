@@ -44,6 +44,8 @@ hash_ = "md5:0123456789abcdef0123456789abcdef"
 local_path = pooch.retrieve(url, hash_, fname="sample.nc", path=pooch.os_cache("render"))
 ```
 
+If it is your first download, you can specify `hash=None`
+
 - Using a small registry and a Pooch instance (recommended for multiple files):
 
 ```python
