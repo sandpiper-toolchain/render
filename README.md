@@ -1,4 +1,6 @@
-# render — Delft3D converters and datacubes
+# render
+
+**Converters, datacubes, and example workflows for creating sandsuet-compliant data from your current data.**
 
 ## Introduction
 
