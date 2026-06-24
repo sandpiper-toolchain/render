@@ -43,11 +43,11 @@ output_netcdf.createDimension("y", T.shape[1])
 output_netcdf.createDimension("x", T.shape[2])
 
 # create time and spatial netCDF variables
-v_time = output_netcdf.createVariable("time", "f4", ("time",))
+v_time = output_netcdf.createVariable("time", "f4", ("time",), fill_value=np.nan)
 v_time.units = "second"
-v_x = output_netcdf.createVariable("x", "f4", ("x"))
+v_x = output_netcdf.createVariable("x", "f4", ("x"), fill_value=np.nan)
 v_x.units = "meter"
-v_y = output_netcdf.createVariable("y", "f4", ("y"))
+v_y = output_netcdf.createVariable("y", "f4", ("y"), fill_value=np.nan)
 v_y.units = "meter"
 
 # fill the variables with the coordinate information
@@ -56,10 +56,10 @@ v_x[:] = x
 v_y[:] = y
 
 # set up variables for output data grids
-v_eta = output_netcdf.createVariable("eta", "f4", ("time", "y", "x"))
+v_eta = output_netcdf.createVariable("eta", "f4", ("time", "y", "x"), fill_value=np.nan)
 v_eta.units = "meter"
 v_eta.long_name = "channel_bottom__elevation"
-v_velocity = output_netcdf.createVariable("velocity", "f4", ("time", "y", "x"))
+v_velocity = output_netcdf.createVariable("velocity", "f4", ("time", "y", "x"), fill_value=np.nan)
 v_velocity.units = "meter/second"
 v_velocity.long_name = "channel_water_flowing__speed"
 v_eta[:] = eta
@@ -68,7 +68,7 @@ v_velocity[:] = velocity
 # set up metadata group and populate variables
 output_netcdf.createGroup("aux")
 v_H_SL = output_netcdf.createVariable(  # an array, the sea level
-    "aux/H_SL", "f4", ("time",)
+    "aux/H_SL", "f4", ("time",), fill_value=np.nan
 )  # only has time dimensions
 v_H_SL.units = "meter"
 v_H_SL.long_name = "basin_water_surface__elevation"
