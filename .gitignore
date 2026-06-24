@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Data files
+*.nc
+
+# Delft3D trim example inputs
+trim-*.dat
+trim-*.def
+
+# Analysis notebooks (output/scratch)
+sandplover_analysis.ipynb
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
