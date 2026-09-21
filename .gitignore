@@ -15,3 +15,7 @@ sandplover_analysis.ipynb
 __pycache__/
 *.pyc
 *.pyo
+
+.vscode/
+
+.ipynb_checkpoints/
